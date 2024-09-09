@@ -1,0 +1,10 @@
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-button {
+    font-size: 2em;
+    color: black;
+    font-weight: bold;
+}

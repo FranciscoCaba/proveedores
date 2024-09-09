@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { JaulasService } from '../services/jaulas.service';
+import { Jaulas } from '../models/jaulas.model';
 
 @Component({
   selector: 'app-jaulas',
@@ -8,5 +10,16 @@ import { Component } from '@angular/core';
   styleUrl: './jaulas.component.css'
 })
 export class JaulasComponent {
+  private proveedorService = inject(JaulasService)
+  jaulas: Jaulas[] = []
 
+  ngOnInit (){
+    this.obtenerJaulas()
+  }
+
+  obtenerJaulas(): void {
+    this.proveedorService.getJaulas().subscribe(
+      res => this.jaulas = res
+    )
+  }
 }

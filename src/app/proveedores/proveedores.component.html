@@ -1,1 +1,42 @@
-<p>proveedores works!</p>
+<div class="bg-image h-100" style="background-color: #f5f7fa;">
+    <div class="mask d-flex align-items-center h-100">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="card mt-3">
+                        <div class="card-body p-0">
+                            <div class="table-responsive table-scroll" data-mdb-perfect-scrollbar="true" style="position: relative; height: 700px">
+                                <table class="table table-striped mb-0">
+                                <thead style="background-color: #002d72;">
+                                    <tr>
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Nombre</th>
+                                        <th scope="col">Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @for (item of proveedores; track item.idProveedor) {
+                                        <tr>
+                                            <td>{{ item.idProveedor }}</td>
+                                            <td>{{ item.nombre }}</td>
+                                            <td>
+                                                <button class="btn btn-success me-3">Editar</button>
+                                                <button class="btn btn-danger">Eliminar</button>
+                                            </td>
+                                        </tr>
+                                    } @empty {
+                                        <tr>
+                                            No hay proveedores
+                                        </tr>
+                                    }
+                                </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-primary w-25 my-3">Agregar</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ProveedoresService } from '../services/proveedores.service';
+import { Proveedores } from '../models/proveedores.model';
 
 @Component({
   selector: 'app-proveedores',
@@ -8,5 +10,16 @@ import { Component } from '@angular/core';
   styleUrl: './proveedores.component.css'
 })
 export class ProveedoresComponent {
+  private proveedorService = inject(ProveedoresService)
+  proveedores: Proveedores[] = []
 
+  ngOnInit (){
+    this.obtenerProveedores()
+  }
+
+  obtenerProveedores(): void {
+    this.proveedorService.getProveedores().subscribe(
+      res => this.proveedores = res
+    )
+  }
 }
