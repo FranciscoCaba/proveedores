@@ -14,6 +14,7 @@ import { Router } from '@angular/router';
 export class ProveedoresComponent {
   private proveedorService = inject(ProveedoresService)
   proveedores: Proveedores[] = []
+  nombreFiltro: string = ''
 
   constructor(private router: Router) {}
 
@@ -23,10 +24,22 @@ export class ProveedoresComponent {
 
   obtenerProveedores(): void {
     this.proveedorService.getProveedores().subscribe(
-      res => this.proveedores = res
+      res => {
+        if (this.nombreFiltro !== '') {
+          this.proveedores = res.filter( item => item.nombre.toLowerCase().includes(this.nombreFiltro.toLowerCase()))
+        } else {
+          this.proveedores = res
+        }
+      }
     )
   }
 
+  filtrar(nombre: string, event: any): void {
+    event.preventDefault();
+    this.nombreFiltro = nombre
+    this.obtenerProveedores()
+  }
+  
   editarProveedor(idProveedor: string): void {
     this.router.navigate(['/proveedores/edit/'+idProveedor])
   }

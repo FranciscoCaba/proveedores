@@ -1,6 +1,11 @@
 <div class="bg-image h-100" style="background-color: #f5f7fa;">
     <div class="mask d-flex align-items-center h-100">
         <div class="container">
+            <form class="mt-3" (submit)="filtrar(nombre.value, $event)">
+                <label class="form-label d-inline me-3" for="nombreFiltro">Nombre</label>
+                <input class="form-control d-inline w-25 me-3" type="text" id="nombreFiltro" name="nombreFiltro" #nombre placeholder="Ingrese el nombre a filtrar" />
+                <button class="btn btn-primary d-inline" type="submit">Filtrar</button>
+            </form>
             <div class="row justify-content-center">
                 <div class="col-12">
                     <div class="card mt-3">
@@ -32,7 +37,10 @@
                                         </tr>
                                     } @empty {
                                         <tr>
-                                            No hay jaulas
+                                            <td></td>
+                                            <td></td>
+                                            <td>No hay jaulas</td>
+                                            <td></td>
                                         </tr>
                                     }
                                 </tbody>

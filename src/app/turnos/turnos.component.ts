@@ -36,7 +36,13 @@ export class TurnosComponent {
   
   obtenerTurnos(): void {
     this.turnoService.getTurnos().subscribe(
-      res => this.turnos = res.filter( item => item.fecha === this.fechaFiltro)
+      res => {
+        if (this.fechaFiltro !== '') {
+          this.turnos = res.filter( item => item.fecha === this.fechaFiltro)
+        } else {
+          this.turnos = res
+        }
+      }
     )
   }
 

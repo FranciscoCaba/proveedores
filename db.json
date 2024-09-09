@@ -44,7 +44,7 @@
     },
     {
       "id": "3",
-      "nombre": "Jaula 3.0",
+      "nombre": "Jaula 3",
       "enUso": false
     }
   ],
@@ -88,6 +88,16 @@
       "idJaula": "",
       "horaInicioRecepcion": "10:30",
       "horaFinRecepcion": "10:34"
+    },
+    {
+      "id": "5",
+      "fecha": "2024-09-09",
+      "horaInicioAgendamiento": "17:30",
+      "horaFinAgendamiento": "18:00",
+      "idProveedor": "5",
+      "idJaula": "",
+      "horaInicioRecepcion": "",
+      "horaFinRecepcion": ""
     }
   ],
   "turnos_detalle": [
@@ -165,6 +175,13 @@
       "idProducto": "1",
       "nombreProducto": "",
       "cantidad": 7
+    },
+    {
+      "id": "84b5",
+      "idTurno": "5",
+      "idProducto": "1",
+      "nombreProducto": "",
+      "cantidad": 4
     }
   ]
 }

@@ -13,6 +13,7 @@ import { Router, RouterLink } from '@angular/router';
 export class ProductosComponent {
   private productoService = inject(ProductosService)
   productos: Productos[] = []
+  nombreFiltro: string = ''
 
   constructor(private router: Router) {}
 
@@ -22,8 +23,20 @@ export class ProductosComponent {
 
   obtenerProductos(): void {
     this.productoService.getProductos().subscribe(
-      res => this.productos = res
+      res => {
+        if (this.nombreFiltro !== '') {
+          this.productos = res.filter( item => item.nombre.toLowerCase().includes(this.nombreFiltro.toLowerCase()))
+        } else {
+          this.productos = res
+        }
+      }
     )
+  }
+
+  filtrar(nombre: string, event: any): void {
+    event.preventDefault();
+    this.nombreFiltro = nombre
+    this.obtenerProductos()
   }
   
   editarProducto(idProducto: string): void {
