@@ -4,7 +4,7 @@ export class Jaulas {
     enUso: boolean;
 
     constructor() {
-        this.id = "1"
+        this.id = "0"
         this.nombre = ''
         this.enUso = false
     }

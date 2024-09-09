@@ -1,0 +1,55 @@
+<div class="bg-image h-100" style="background-color: #f5f7fa;">
+    <div class="mask d-flex align-items-center h-100">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="card mt-3">
+                        <div class="card-body p-0">
+                            <div class="table-responsive table-scroll" data-mdb-perfect-scrollbar="true" style="position: relative; height: 700px">
+                                <table class="table table-striped mb-0">
+                                <thead style="background-color: #002d72;">
+                                    <tr>
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Fecha</th>
+                                        <th scope="col">Hora Inicio A.</th>
+                                        <th scope="col">Hora Fin A.</th>
+                                        <th scope="col">Proveedor</th>
+                                        <th scope="col">Jaula</th>
+                                        <th scope="col">Hora Inicio R.</th>
+                                        <th scope="col">Hora Fin R.</th>
+                                        <th scope="col">Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @for (item of turnos; track item.id) {
+                                        <tr>
+                                            <td>{{ item.id }}</td>
+                                            <td>{{ item.fecha }}</td>
+                                            <td>{{ item.horaInicioAgendamiento }}</td>
+                                            <td>{{ item.horaFinAgendamiento }}</td>
+                                            <td>{{ item.idProveedor }}</td>
+                                            <td>{{ item.idJaula }}</td>
+                                            <td>{{ item.horaInicioRecepcion }}</td>
+                                            <td>{{ item.horaFinRecepcion }}</td>
+                                            <td>
+                                                <button class="btn btn-success me-3" (click)="editarTurno(item.id)">Editar</button>
+                                                <button class="btn btn-danger me-3"  (click)="eliminarTurno(item.id)">Eliminar</button>
+                                                <button class="btn btn-primary"  (click)="verDetalle(item.id)">Detalles</button>
+                                            </td>
+                                        </tr>
+                                    } @empty {
+                                        <tr>
+                                            No hay turnos
+                                        </tr>
+                                    }
+                                </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-primary w-25 my-3" routerLink="add">Agregar</button>
+            </div>
+        </div>
+    </div>
+</div>

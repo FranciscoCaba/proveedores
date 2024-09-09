@@ -8,6 +8,10 @@ import { AgregarProductoComponent } from './productos/agregarProducto.component'
 import { AgregarJaulaComponent } from './jaulas/agregarJaula.component';
 import { EditarProductoComponent } from './productos/editarProducto.component';
 import { EditarJaulaComponent } from './jaulas/editarJaula.component';
+import { TurnosComponent } from './turnos/turnos.component';
+import { AgregarTurnoComponent } from './turnos/agregarTurno.component';
+import { EditarTurnoComponent } from './turnos/editarTurno.component';
+import { AgregarDetalleComponent } from './turnos/agregarDetalle.component';
 
 export const routes: Routes = [
     {
@@ -45,5 +49,21 @@ export const routes: Routes = [
     {
         path:'jaulas/edit/:idJaula',
         component: EditarJaulaComponent
+    },
+    {
+        path: 'turnos',
+        component: TurnosComponent
+    },
+    {
+        path:'turnos/add',
+        component: AgregarTurnoComponent
+    },
+    {
+        path:'turnos/edit/:idTurno',
+        component: EditarTurnoComponent
+    },
+    {
+        path:'detalle/add/:idTurno',
+        component: AgregarDetalleComponent
     },
 ];

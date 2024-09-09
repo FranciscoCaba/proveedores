@@ -25,6 +25,10 @@
     {
       "id": "1",
       "nombre": "Pastilla de Freno"
+    },
+    {
+      "id": "2",
+      "nombre": "Leche Sachet 1L"
     }
   ],
   "jaulas": [
@@ -47,21 +51,120 @@
   "turnos": [
     {
       "id": "1",
-      "fecha": "25/12/2023",
+      "fecha": "2024-09-18",
       "horaInicioAgendamiento": "12:00",
-      "horaFinAgendamiento": "14:00",
-      "idProveedor": 1,
-      "idJaula": 1,
+      "horaFinAgendamiento": "13:30",
+      "idProveedor": "2",
+      "idJaula": "1",
       "horaInicioRecepcion": "10:00",
       "horaFinRecepcion": "11:00"
+    },
+    {
+      "id": "2",
+      "fecha": "2024-09-25",
+      "horaInicioAgendamiento": "13:30",
+      "horaFinAgendamiento": "15:00",
+      "idProveedor": "3",
+      "idJaula": "",
+      "horaInicioRecepcion": "",
+      "horaFinRecepcion": ""
+    },
+    {
+      "id": "3",
+      "fecha": "2024-09-16",
+      "horaInicioAgendamiento": "10:30",
+      "horaFinAgendamiento": "13:30",
+      "idProveedor": "4",
+      "idJaula": "",
+      "horaInicioRecepcion": "",
+      "horaFinRecepcion": ""
+    },
+    {
+      "id": "4",
+      "fecha": "2024-09-12",
+      "horaInicioAgendamiento": "10:30",
+      "horaFinAgendamiento": "12:30",
+      "idProveedor": "3",
+      "idJaula": "",
+      "horaInicioRecepcion": "",
+      "horaFinRecepcion": ""
     }
   ],
   "turnos_detalle": [
     {
-      "idTurno": 1,
-      "idProducto": 1,
+      "idTurno": "1",
+      "idProducto": "1",
       "cantidad": 13,
       "id": "c17b"
+    },
+    {
+      "id": "3986",
+      "idTurno": "4",
+      "idProducto": "1",
+      "cantidad": 3
+    },
+    {
+      "id": "9c79",
+      "idTurno": "4",
+      "idProducto": "1",
+      "nombreProducto": "",
+      "cantidad": 7
+    },
+    {
+      "id": "2e76",
+      "idTurno": "4",
+      "idProducto": "2",
+      "nombreProducto": "",
+      "cantidad": 6
+    },
+    {
+      "id": "d22e",
+      "idTurno": "3",
+      "idProducto": "2",
+      "nombreProducto": "",
+      "cantidad": 2
+    },
+    {
+      "id": "e649",
+      "idTurno": "3",
+      "idProducto": "1",
+      "nombreProducto": "",
+      "cantidad": 3
+    },
+    {
+      "id": "6b30",
+      "idTurno": "4",
+      "idProducto": "1",
+      "nombreProducto": "",
+      "cantidad": 7
+    },
+    {
+      "id": "98ba",
+      "idTurno": "4",
+      "idProducto": "1",
+      "nombreProducto": "",
+      "cantidad": 7
+    },
+    {
+      "id": "9613",
+      "idTurno": "4",
+      "idProducto": "1",
+      "nombreProducto": "",
+      "cantidad": 7
+    },
+    {
+      "id": "7572",
+      "idTurno": "4",
+      "idProducto": "1",
+      "nombreProducto": "",
+      "cantidad": 7
+    },
+    {
+      "id": "d0fe",
+      "idTurno": "4",
+      "idProducto": "1",
+      "nombreProducto": "",
+      "cantidad": 7
     }
   ]
 }
