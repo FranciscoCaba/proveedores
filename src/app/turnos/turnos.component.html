@@ -34,7 +34,7 @@
                                             <!--td>{{ item.fecha }}</td-->
                                             <td>{{ item.horaInicioAgendamiento }}</td>
                                             <td>{{ item.horaFinAgendamiento }}</td>
-                                            <td>{{ item.idProveedor }}</td>
+                                            <td>{{ proveedoresDict[item.idProveedor] }}</td>
                                             <td>
                                                 @if (item.horaFinRecepcion) {
                                                     Completado
@@ -44,7 +44,7 @@
                                                     En recepción
                                                 }
                                             </td>
-                                            <td>{{ item.idJaula }}</td>
+                                            <td>{{ jaulasDict[item.idJaula] }}</td>
                                             <td>{{ item.horaInicioRecepcion }}</td>
                                             <td>{{ item.horaFinRecepcion }}</td>
                                             <td>

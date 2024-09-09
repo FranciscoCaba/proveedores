@@ -7,6 +7,7 @@ import { DetalleComponent } from './detalle.component';
 import { Jaulas } from '../models/jaulas.model';
 import { JaulasService } from '../services/jaulas.service';
 import { FormsModule } from '@angular/forms';
+import { ProveedoresService } from '../services/proveedores.service';
 
 @Component({
   selector: 'app-turnos',
@@ -18,20 +19,23 @@ import { FormsModule } from '@angular/forms';
 export class TurnosComponent {
   private turnoService = inject(TurnosService)
   private jaulaService = inject(JaulasService)
+  private proveedorService = inject(ProveedoresService)
   turno: Turnos = new Turnos()
-  turnos: Turnos[] = []
+  turnos: Turnos[] = [new Turnos()]
   jaula: Jaulas = new Jaulas()
   jaulas: Jaulas[] = [new Jaulas()]
-  proveedores: Proveedores[] = [new Proveedores()]
   idTurno: string = '1'
   idJaula: string = '1'
   fechaFiltro: string = ''
+  jaulasDict: {[key: string]: string } = {}
+  proveedoresDict: {[key: string]: string } = {}
 
   constructor(private router: Router) {}
 
   ngOnInit (){
     this.obtenerTurnos()
     this.obtenerJaulas()
+    this.obtenerProveedores()
   }
   
   obtenerTurnos(): void {
@@ -48,7 +52,22 @@ export class TurnosComponent {
 
   obtenerJaulas(): void {
     this.jaulaService.getJaulas().subscribe(
-      res => this.jaulas = res.filter( item => !item.enUso )
+      res => {
+        this.jaulas = res.filter( item => !item.enUso )
+        for (let i = 0; i < res.length; i++) {
+          this.jaulasDict[res[i].id] = res[i].nombre
+        }
+      }
+    )
+  }
+
+  obtenerProveedores(): void {
+    this.proveedorService.getProveedores().subscribe(
+      res => {
+        for (let i = 0; i < res.length; i++) {
+          this.proveedoresDict[res[i].id] = res[i].nombre
+        }
+      }
     )
   }
 

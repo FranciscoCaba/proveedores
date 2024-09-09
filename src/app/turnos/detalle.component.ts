@@ -2,6 +2,7 @@ import { Component, inject, Input, OnChanges, OnInit, SimpleChanges } from '@ang
 import { Router, RouterLink } from '@angular/router';
 import { DetalleTurnoService } from '../services/detalle-turno.service';
 import { TurnosDetalle } from '../models/turnos-detalle.model';
+import { ProductosService } from '../services/productos.service';
 
 @Component({
     selector: 'app-detalle',
@@ -33,7 +34,7 @@ import { TurnosDetalle } from '../models/turnos-detalle.model';
                                                     <tbody>
                                                         @for (item of detalles; track $index) {
                                                             <tr>
-                                                                <td>{{ item.idProducto }}</td>
+                                                                <td>{{ productosDict[item.idProducto] }}</td>
                                                                 <td>{{ item.cantidad }}</td>
                                                             </tr>
                                                         } @empty {
@@ -66,12 +67,15 @@ export class DetalleComponent implements OnInit, OnChanges {
     @Input() idTurno : string = ''
     @Input() visible : boolean = false
     private detalleService = inject(DetalleTurnoService)
+    private productoService = inject(ProductosService)
     detalles: TurnosDetalle[] = []
+    productosDict: {[key: string]: string } = {}
 
     constructor(private router: Router) {}
 
     ngOnInit (){
         this.obtenerDetalles()
+        this.obtenerProductos()
     }
 
     ngOnChanges(changes: SimpleChanges): void {
@@ -83,6 +87,16 @@ export class DetalleComponent implements OnInit, OnChanges {
     obtenerDetalles(): void {
         this.detalleService.getDetalles().subscribe(
             res => this.detalles = res.filter( item => item.idTurno === this.idTurno)
+        )
+    }
+
+    obtenerProductos(): void {
+        this.productoService.getProductos().subscribe(
+            res => {
+                for (let i = 0; i < res.length; i++) {
+                this.productosDict[res[i].id] = res[i].nombre
+                }
+            }
         )
     }
 

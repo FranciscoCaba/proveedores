@@ -55,15 +55,17 @@ import { Productos } from '../models/productos.model';
                                         <tbody>
                                             @for (item of detalles; track $index) {
                                                 <tr>
-                                                    <td>{{ item.idProducto }}</td>
+                                                    <td>{{ productosDict[item.idProducto] }}</td>
                                                     <td>{{ item.idTurno }}</td>
                                                     <td>{{ item.cantidad }}</td>
                                                 </tr>
                                             } @empty {
                                                 <tr>
+                                                    <td></td>
                                                     <td>
                                                         No hay productos
                                                     </td>
+                                                    <td></td>
                                                 </tr>
                                             }
                                         </tbody>
@@ -88,6 +90,7 @@ export class AgregarDetalleComponent {
     detalle: TurnosDetalle = new TurnosDetalle()
     detalles: TurnosDetalle[] = [new TurnosDetalle()]
     productos: Productos[] = [new Productos()]
+    productosDict: {[key: string]: string } = {}
 
     constructor(private router: Router) {}
 
@@ -97,12 +100,23 @@ export class AgregarDetalleComponent {
             this.productos = res
         })
         this.recargarDetalles()
+        this.obtenerProductos()
     }
 
     recargarDetalles(): void{
         this.detalleService.getDetalles().subscribe( (res) => {
             this.detalles = res.filter( item => item.idTurno === this.id)
         })
+    }
+
+    obtenerProductos(): void {
+        this.productoService.getProductos().subscribe(
+            res => {
+                for (let i = 0; i < res.length; i++) {
+                this.productosDict[res[i].id] = res[i].nombre
+                }
+            }
+        )
     }
 
     guardar(): void{
