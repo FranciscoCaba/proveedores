@@ -40,7 +40,7 @@
     {
       "id": "2",
       "nombre": "Jaula 2",
-      "enUso": true
+      "enUso": false
     },
     {
       "id": "3",
@@ -77,7 +77,7 @@
       "idProveedor": "5",
       "idJaula": "2",
       "horaInicioRecepcion": "13:12",
-      "horaFinRecepcion": "13:12"
+      "horaFinRecepcion": "13:18"
     }
   ],
   "turnos_detalle": [

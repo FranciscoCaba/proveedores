@@ -106,9 +106,9 @@ export class TurnosComponent {
           
           this.jaula.enUso = true
           
-          this.jaulaService.editJaula(this.jaula).subscribe( (res) => {
-            console.log(res)
-          })
+          this.jaulaService.editJaula(this.jaula).subscribe(
+            res => this.obtenerJaulas()
+          )
         }
       )
 
@@ -128,6 +128,18 @@ export class TurnosComponent {
       this.turno = res
       const hoy = new Date()
       this.turno.horaFinRecepcion = (hoy.getHours())+":"+(hoy.getMinutes())
+
+      this.jaulaService.getJaula(this.turno.idJaula).subscribe(
+        res => {
+          this.jaula = res
+          this.jaula.enUso = false
+
+          this.jaulaService.editJaula(this.jaula).subscribe(
+            res => this.obtenerJaulas()
+          )
+
+        }
+      )
       
       this.turnoService.editTurno(this.turno).subscribe((res)=>{
         if(res){
