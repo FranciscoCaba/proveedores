@@ -7,7 +7,7 @@ import { Turnos } from '../models/turnos.model';
   providedIn: 'root'
 })
 export class TurnosService extends BaseHttpService {
-  getTurno(idTurno: number) : Observable<Turnos> {
+  getTurno(idTurno: string) : Observable<Turnos> {
     return this.http.get<Turnos>(this.apiUrl+"/turnos/"+idTurno)
   }
 

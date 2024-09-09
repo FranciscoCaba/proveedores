@@ -55,7 +55,7 @@ import { Proveedores } from '../models/proveedores.model';
     styles: ``
 })
 export class EditarTurnoComponent {
-    private turnoservice = inject(TurnosService)
+    private turnoService = inject(TurnosService)
     private proveedorService = inject(ProveedoresService)
     private activatedRoute = inject(ActivatedRoute);
     id = this.activatedRoute.snapshot.params['idTurno'];
@@ -66,7 +66,7 @@ export class EditarTurnoComponent {
     constructor(private router: Router) {}
 
     ngOnInit() {
-        this.turnoservice.getTurno(this.id).subscribe((res)=>{
+        this.turnoService.getTurno(this.id).subscribe((res)=>{
             this.turno = res
         })
         this.proveedorService.getProveedores().subscribe( (res) => {
@@ -75,7 +75,7 @@ export class EditarTurnoComponent {
     }
 
     guardar(){
-        this.turnoservice.editTurno(this.turno).subscribe((res)=>{
+        this.turnoService.editTurno(this.turno).subscribe((res)=>{
             if(res){
                 this.router.navigate(['/turnos'])
             }

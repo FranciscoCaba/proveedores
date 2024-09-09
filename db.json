@@ -40,7 +40,7 @@
     {
       "id": "2",
       "nombre": "Jaula 2",
-      "enUso": false
+      "enUso": true
     },
     {
       "id": "3",
@@ -51,13 +51,13 @@
   "turnos": [
     {
       "id": "1",
-      "fecha": "2024-09-18",
-      "horaInicioAgendamiento": "12:00",
-      "horaFinAgendamiento": "13:30",
-      "idProveedor": "2",
-      "idJaula": "1",
-      "horaInicioRecepcion": "10:00",
-      "horaFinRecepcion": "11:00"
+      "fecha": "2024-09-12",
+      "horaInicioAgendamiento": "7:00",
+      "horaFinAgendamiento": "7:30",
+      "idProveedor": "1",
+      "idJaula": "",
+      "horaInicioRecepcion": "10:33",
+      "horaFinRecepcion": ""
     },
     {
       "id": "2",
@@ -75,9 +75,9 @@
       "horaInicioAgendamiento": "10:30",
       "horaFinAgendamiento": "13:30",
       "idProveedor": "4",
-      "idJaula": "",
-      "horaInicioRecepcion": "",
-      "horaFinRecepcion": ""
+      "idJaula": "2",
+      "horaInicioRecepcion": "11:51",
+      "horaFinRecepcion": "11:51"
     },
     {
       "id": "4",
@@ -86,8 +86,8 @@
       "horaFinAgendamiento": "12:30",
       "idProveedor": "3",
       "idJaula": "",
-      "horaInicioRecepcion": "",
-      "horaFinRecepcion": ""
+      "horaInicioRecepcion": "10:30",
+      "horaFinRecepcion": "10:34"
     }
   ],
   "turnos_detalle": [

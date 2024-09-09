@@ -8,7 +8,7 @@ import { Jaulas } from '../models/jaulas.model';
 })
 export class JaulasService extends BaseHttpService {
 
-  getJaula(idJaula: number) : Observable<Jaulas> {
+  getJaula(idJaula: string) : Observable<Jaulas> {
     return this.http.get<Jaulas>(this.apiUrl+"/jaulas/"+idJaula)
   }
 
