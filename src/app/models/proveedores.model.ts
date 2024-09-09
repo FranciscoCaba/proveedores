@@ -1,9 +1,9 @@
 export class Proveedores {
-    idProveedor: number;
+    id: string;
     nombre: string;
 
     constructor() {
-        this.idProveedor = 1
+        this.id = "1"
         this.nombre = ''
     }
 }

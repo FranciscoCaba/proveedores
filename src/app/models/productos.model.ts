@@ -1,9 +1,9 @@
 export class Productos {
-    idProducto: number;
+    id: string;
     nombre: string;
 
     constructor() {
-        this.idProducto = 1
+        this.id = "1"
         this.nombre = ''
     }
 }

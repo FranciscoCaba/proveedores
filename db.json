@@ -1,45 +1,67 @@
 {
-    "proveedores": [
-        {
-            "idProveedor": 1,
-            "nombre": "Chacomer"
-        }
-    ],
-    "productos": [
-        {
-            "idProducto": 1,
-            "nombre": "Pastilla de Freno"
-        }
-    ],
-    "jaulas": [
-        {
-            "idJaula": 1,
-            "nombre": "Jaula 1",
-            "enUso": true
-        },
-        {
-            "idJaula": 2,
-            "nombre": "Jaula 2",
-            "enUso": false
-        }
-    ],
-    "turnos": [
-        {
-            "idTurno": 1,
-            "fecha": "25/12/2023",
-            "horaInicioAgendamiento": "12:00",
-            "horaFinAgendamiento": "14:00",
-            "idProveedor": 1,
-            "idJaula": 1,
-            "horaInicioRecepcion": "10:00",
-            "horaFinRecepcion": "11:00"
-        }
-    ],
-    "turnos_detalle": [
-        {
-            "idTurno": 1,
-            "idProducto": 1,
-            "cantidad": 13
-        }
-    ]
+  "proveedores": [
+    {
+      "id": "1",
+      "nombre": "Chacomer"
+    },
+    {
+      "id": "2",
+      "nombre": "Lactolanda"
+    },
+    {
+      "id": "3",
+      "nombre": "NVIDIA"
+    },
+    {
+      "id": "4",
+      "nombre": "Luomo"
+    },
+    {
+      "id": "5",
+      "nombre": "Ochsi"
+    }
+  ],
+  "productos": [
+    {
+      "id": "1",
+      "nombre": "Pastilla de Freno"
+    }
+  ],
+  "jaulas": [
+    {
+      "id": "1",
+      "nombre": "Jaula 1",
+      "enUso": true
+    },
+    {
+      "id": "2",
+      "nombre": "Jaula 2",
+      "enUso": false
+    },
+    {
+      "id": "3",
+      "nombre": "Jaula 3.0",
+      "enUso": false
+    }
+  ],
+  "turnos": [
+    {
+      "id": "1",
+      "fecha": "25/12/2023",
+      "horaInicioAgendamiento": "12:00",
+      "horaFinAgendamiento": "14:00",
+      "idProveedor": 1,
+      "idJaula": 1,
+      "horaInicioRecepcion": "10:00",
+      "horaFinRecepcion": "11:00"
+    }
+  ],
+  "turnos_detalle": [
+    {
+      "idTurno": 1,
+      "idProducto": 1,
+      "cantidad": 13,
+      "id": "c17b"
+    }
+  ]
 }

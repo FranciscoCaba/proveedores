@@ -15,13 +15,13 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @for (item of productos; track item.idProducto) {
+                                    @for (item of productos; track item.id) {
                                         <tr>
-                                            <td>{{ item.idProducto }}</td>
+                                            <td>{{ item.id }}</td>
                                             <td>{{ item.nombre }}</td>
                                             <td>
-                                                <button class="btn btn-success me-3">Editar</button>
-                                                <button class="btn btn-danger">Eliminar</button>
+                                                <button class="btn btn-success me-3" (click)="editarProducto(item.id)">Editar</button>
+                                                <button class="btn btn-danger"  (click)="eliminarProducto(item.id)">Eliminar</button>
                                             </td>
                                         </tr>
                                     } @empty {
@@ -35,7 +35,7 @@
                         </div>
                     </div>
                 </div>
-                <button class="btn btn-primary w-25 my-3">Agregar</button>
+                <button class="btn btn-primary w-25 my-3" routerLink="add">Agregar</button>
             </div>
         </div>
     </div>

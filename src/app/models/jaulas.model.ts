@@ -1,10 +1,10 @@
 export class Jaulas {
-    idJaula: number;
+    id: string;
     nombre: string;
     enUso: boolean;
 
     constructor() {
-        this.idJaula = 1
+        this.id = "1"
         this.nombre = ''
         this.enUso = false
     }
